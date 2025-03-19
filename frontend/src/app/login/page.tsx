@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react"; // Add useEffect
+import { useState, useEffect } from "react"; 
 import axios from "axios";
-import { useRouter } from "next/navigation"; // Updated import for App Router
-import { Button } from "@/components/ui/button"; // Shadcn UI Button
-import { Input } from "@/components/ui/input"; // Shadcn UI Input
-import { Label } from "@/components/ui/label"; // Shadcn UI Label
+import { useRouter } from "next/navigation"; 
+import { Button } from "@/components/ui/button"; 
+import { Input } from "@/components/ui/input"; 
+import { Label } from "@/components/ui/label"; 
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import * as Yup from "yup"; // For validation
+import * as Yup from "yup"; 
 
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid email address").required("Email is required"),
@@ -16,10 +16,10 @@ const validationSchema = Yup.object({
 
 export default function Login() {
   const [error, setError] = useState("");
-  const [isMounted, setIsMounted] = useState(false); // Track if component is mounted
+  const [isMounted, setIsMounted] = useState(false); 
   const router = useRouter();
 
-  // Ensure client-side rendering
+  
   useEffect(() => {
     setIsMounted(true);
 
@@ -41,7 +41,7 @@ export default function Login() {
       localStorage.setItem("token", response.data.token); // Store token in localStorage
       localStorage.setItem("username", response.data.username); // Store username in localStorage
 
-      router.replace("/"); // Use replace instead of push
+      router.replace("/"); 
     } catch (error) {
       setError("Invalid email or password");
     }

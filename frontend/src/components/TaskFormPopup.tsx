@@ -13,7 +13,7 @@ import { Loader2 } from "lucide-react";
 
 interface TaskFormPopupProps {
   fetchTasks: () => void;
-  taskId?: string; // Optional task ID for update mode
+  taskId?: string; 
 }
 
 export default function TaskFormPopup({ fetchTasks, taskId }: TaskFormPopupProps) {

@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Loader2 } from "lucide-react"; // Loading spinner
+import { Loader2 } from "lucide-react"; 
 import { useAuth } from "@/hooks/useAuth";
 
 interface Task {
